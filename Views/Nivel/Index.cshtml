@@ -1,0 +1,51 @@
+<a  asp-action="Create" asp-controller="Nivel">Cadastrar</a>;
+
+
+@model ListaNivelViewModel
+
+<h1>Lista de Niveis</h1>
+
+<div class="row">
+     <h1>@ViewData["Title"]</h1>
+     <table class="table">
+         
+         <thead>
+            <tr>
+               <th scope="col">Id</th>
+               <th scope="col">Nome</th>
+               <th scope="col">Deletar</th>
+               <th scorpe="col">Atualizar</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            @foreach (var item in Model.Niveis)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td><a 
+                           asp-controller="Nivel" 
+                           asp-action="Delete" 
+                           asp-route-id="@item.Id" 
+                           class="btn btn-outline-danger" >
+                           Apagar
+                        </a>
+                    </td>
+                    <td> 
+                        <a 
+                           asp-controller="Nivel" 
+                           asp-action="Edit" 
+                           asp-route-id="@item.Id" 
+                           class="btn btn-sm btn-warning" >
+                           Editar
+                        </a>
+                </tr>   
+            }
+
+         </tbody>
+
+
+     </table>
+
+</div>

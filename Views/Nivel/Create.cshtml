@@ -1,0 +1,10 @@
+@model NivelViewModel
+@ViewData["titulo"]
+<div>
+    <form method="post">
+    nome <input asp-for="Nome" type="text" >
+    <button type="submit"> 
+        @ViewData["TitleButton"]
+         </button>
+    </form>
+</div>
